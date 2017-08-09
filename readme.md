@@ -38,4 +38,7 @@ Nếu không kết nối được hay có bất kỳ vấn đề gì vui lòng i
 - cd /var/www/html 
 - Kiểm trạng thái module: sudo bin/magento module:status
 - Enable module: sudo bin/magento module:enable Robin_Bai1
-- 
+
+3. Layout, Block, Template 
+- Đặt tên view theo định dang: module_controller_action.xml. VD: bai1_hello_world.xml 
+- Xóa file trong thư mục generation: sudo rm -rf var/generation/* (khi bị báo lỗi trong contruct của world)
