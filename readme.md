@@ -27,3 +27,15 @@ php bin/magento setup:static-content:deploy
 php bin/magento indexer:reindexrm –rf var/cache
 Nếu không kết nối được hay có bất kỳ vấn đề gì vui lòng inbox đến room Magento learning
 để có người support kịp thời.
+
+2. Module Hello World
+- 1 số lệnh linux cơ bản cần dùng: 
++ pwd: Hiện thư mục hiện tại. VD: Home/vagrant
++ dir: Hiện thư mục
++ ls: Hiện tất cả file và thư mục chứa trong đó
+- cd magento/magento/html/var 
+- Chạy vagrant ssh 
+- cd /var/www/html 
+- Kiểm trạng thái module: sudo bin/magento module:status
+- Enable module: sudo bin/magento module:enable Robin_Bai1
+- 
