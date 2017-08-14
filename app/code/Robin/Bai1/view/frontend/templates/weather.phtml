@@ -1,4 +1,3 @@
-<h3>Thời tiết trong ngày</h3>
 
 <div id="weather">
     <div class="top-content">
@@ -26,6 +25,7 @@
                 success: function (weather) {
                     $('.image').html('<img src="' + weather.image + '"/>');
                     $('.temperature').html(weather.temp + '<sup>o</sup>C');
+
                     var info = '<li>Status: ' + weather.currently + '</li>' +
                         '<li>Range: ' + weather.low + '<sup>o</sup>C - ' + weather.high + '<sup>o</sup>C</li>' +
                         '<li>Wind: ' + weather.wind.speed + ' km/h</li>';
@@ -37,4 +37,10 @@
             });
         });
     });
+
+//    require(['jquery', 'mage/calendar'], function ($) {
+//        $(function () {
+//            $("#datepicker").datepicker();
+//        }
+//    });
 </script>
