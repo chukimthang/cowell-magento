@@ -39,8 +39,8 @@ pass: admin123
 
 3. Layout, Block, Template 
 - Đặt tên view theo định dang: module_controller_action.xml. VD: bai1_hello_world.xml 
-- Xóa file trong thư mục generation: sudo rm -rf var/generation/* (khi bị báo lỗi trong contruct của world)
-
+- Xóa file trong thư mục generation: sudo rm -rf var/generation/* (khi bị báo lỗi trong contruct của world).
+Lệnh này sẽ xóa toàn bộ các file trong thư mục var/generation
 4. Những lệnh cơ bản trong magento thường dùng
 + bin/magento setup:upgrade (1)
 + bin/magento setup:di:compile (2)
