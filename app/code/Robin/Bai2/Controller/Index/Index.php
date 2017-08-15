@@ -2,43 +2,43 @@
 
 namespace Robin\Bai2\Controller\Index;
 
-class Index extends \Magento\Framework\App\Action\Action {
+use \Magento\Framework\App\Action\Context;
+use \Robin\Bai2\Model\BannerFactory;
+
+class Index extends \Magento\Framework\App\Action\Action
+{
+    protected $bannerFactory;
+
+    public function __construct(\Magento\Framework\App\Action\Context $context, \Robin\Bai2\Model\BannerFactory $bannerFactory)
+    {
+        $this->bannerFactory = $bannerFactory;
+        parent::__construct($context);
+    }
 
     public function execute()
     {
-        /**
-         * Insert data
-         */
-//        $extension = ['.png', '.jpg', '.gif'];
-//        $url = ['https://www.google.com.vn/', 'http://www.w3schools.com/'];
-//
-//        for ($i = 1; $i <= 20; $i++) {
-//            $banner = $this->_objectManager->create('Robin\Bai2\Model\Banner');
-//
-//            // Insert data
-//            $banner->addData([
-//                'link' => $url[rand(0, 1)],
-//                'image' => 'image' . $i . $extension[rand(0, 2)],
-//                'sort_order' => $i,
-//                'status' => rand(0, 1)
-//            ])->save();
-//        }
+        //create banner instance
+        $banner = $this->bannerFactory->create();
+        $collection = $banner->getCollection();
 
-        /**
-         * Select, update, delete data
-         */
-        $banner = $this->_objectManager->create('Robin\Bai2\Model\Banner');
-        $data = $banner->load(1); //get data id = 1
-        echo "<pre>";
-        print_r($data->getData());
+        //SELECT * FROM banner
+        //$data = $collection->getData();
 
-        $data->setImage("thang.png")->save();
-        echo "<pre>";
-        print_r($data->getData());
+        //SELECT * FROM banner WHERE id > 50
+        //$data = $collection->addFieldToFilter('id', ['gt' => 50])->getData();
 
-        $data->delete();
+        //SELECT id FROM banner WHERE id > 70
+//        $data = $collection->addFieldToSelect('id')
+//            ->addFieldToFilter('id', ['gt' => 70])
+//            ->getData();
 
-        echo "<br/>Done.";
-        exit;
+        //SELECT id FROM banner WHERE id > 70  AND image LIKE '%.png'
+        $query = $collection->addFieldToSelect('id')
+            ->addFieldToFilter('id', ['gt' => 70])
+            ->addFieldToFilter('image', ['like' => '%.png'])
+            ->getSelect();
+
+        echo $query;
+//        print_r(json_encode($data));
     }
 }
