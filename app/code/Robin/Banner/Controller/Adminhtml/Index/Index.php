@@ -1,15 +1,13 @@
 <?php
 
 namespace Robin\Banner\Controller\Adminhtml\Index;
+
 class Index extends \Magento\Backend\App\Action
 {
+    const ADMIN_RESOURCE = 'Robin_Banner::banner_manager';
+
     protected $resultPageFactory;
 
-    /**
-     * @param \Magento\Backend\App\Action\Context $context
-     * @param \Magento\Framework\View\Result\PageFactory
-     * $resultPageFactory
-     */
     public function __construct(
         \Magento\Backend\App\Action\Context $context,
         \Magento\Framework\View\Result\PageFactory $resultPageFactory
@@ -19,16 +17,12 @@ class Index extends \Magento\Backend\App\Action
         $this->resultPageFactory = $resultPageFactory;
     }
 
-    /**
-     * @return \Magento\Backend\Model\View\Result\Page
-     */
     public function execute()
     {
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        // Load layout and set active menu
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Magento_Backend::dashboard');
-        $resultPage->addBreadcrumb(__('Dashboard'), __('Dashboard'));
-        $resultPage->getConfig()->getTitle()->prepend(__('Dashboard'));
+        $resultPage->setActiveMenu('Robin_Banner::banner_manager');
+        $resultPage->getConfig()->getTitle()->prepend(__('Banner manager'));
         return $resultPage;
     }
 }
