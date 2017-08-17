@@ -52,7 +52,6 @@ class Save extends \Magento\Backend\App\Action
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
         if ($data) {
-            $data = $this->dataProcessor->filter($data);
             if (isset($data['status']) && $data['status'] === 'true') {
                 $data['status'] = Banner::STATUS_ENABLED;
             }

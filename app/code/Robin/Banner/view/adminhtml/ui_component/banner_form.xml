@@ -22,7 +22,7 @@
 
     <dataSource name="banner_form_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
-            <argument name="class" xsi:type="string">Magento\Cms\Model\Page\DataProvider</argument>
+            <argument name="class" xsi:type="string">Robin\Banner\Model\Banner\DataProvider</argument>
             <argument name="name" xsi:type="string">banner_form_data_source</argument>
             <argument name="primaryFieldName" xsi:type="string">id</argument>
             <argument name="requestFieldName" xsi:type="string">id</argument>
