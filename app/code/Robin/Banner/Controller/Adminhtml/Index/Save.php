@@ -59,6 +59,15 @@ class Save extends \Magento\Backend\App\Action
                 $data['id'] = null;
             }
 
+            if (empty($data['images'])) {
+                $data['images'] = null;
+            } else {
+                if ($data['images'][0] && $data['images'][0]['name'])
+                    $data['image'] = $data['images'][0]['name'];
+                else
+                    $data['image'] = null;
+            }
+
             /** @var \Robin\Banner\Model\Banner $model */
             $model = $this->_objectManager->create('Robin\Banner\Model\Banner');
 
