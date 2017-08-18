@@ -16,7 +16,7 @@ class Banner extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
         // Check when new image uploaded
         if ($image != null) {
             $imageUploader = \Magento\Framework\App\ObjectManager::getInstance()
-                ->get('Robin\Banner\BannerImageUpload');
+                ->get('Thangck\Banner\BannerImageUpload');
             $imageUploader->moveFileFromTmp($image);
         }
 

@@ -11104,7 +11104,7 @@
  *     return deferred.promise;
  *   }
      *
-     *   var promise = asyncGreet('Robin Hood');
+     *   var promise = asyncGreet('Thangck Hood');
      *   promise.then(function(greeting) {
  *     alert('Success: ' + greeting);
  *   }, function(reason) {

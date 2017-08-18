@@ -49,3 +49,7 @@ Lệnh này sẽ xóa toàn bộ các file trong thư mục var/generation
 - Nếu lệnh (2) có lỗi thì thực hiện những lệnh sau
 + rm -rf var/generation/
 + rm -rf var/cache/*
+
+4. Phần Theme
+- sudo rm -rf var/view_preprocessed
+- sudo rm -rf pub/static/frontend
